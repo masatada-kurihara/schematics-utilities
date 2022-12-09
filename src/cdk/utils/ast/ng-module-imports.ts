@@ -51,7 +51,7 @@ function resolveIdentifierOfExpression(expression: ts.Expression): ts.Identifier
   if (ts.isIdentifier(expression)) {
     return expression;
   } else if (ts.isPropertyAccessExpression(expression)) {
-    return expression.name;
+    return <ts.Identifier>expression.name;
   }
   return null;
 }
